@@ -1,9 +1,8 @@
-import { Flex, Text, Input, Icon, HStack, Box, Avatar } from "@chakra-ui/react";
-import {
-  RiNotificationLine,
-  RiSearchLine,
-  RiUserAddLine,
-} from "react-icons/ri";
+import { Flex } from "@chakra-ui/react";
+import { Profile } from "./Header/Profile";
+import { Logo } from "./Header/Logo";
+import { Notifications } from "./Header/Notifications";
+import { SearchBox } from "./Header/SearchBox";
 
 export function Header() {
   return (
@@ -17,62 +16,13 @@ export function Header() {
       px="6"
       align="center"
     >
-      <Text
-        fontSize={["2xl", "3xl"]}
-        w="64"
-        fontWeight="bold"
-        letterSpacing="tight"
-      >
-        dashgo
-        <Text as="span" color="pink.500" ml="1">
-          .
-        </Text>
-      </Text>
+      <Logo />
 
-      <Flex
-        as="label"
-        flex="1"
-        py="4"
-        px="8"
-        ml="6"
-        maxWidth={400}
-        alignSelf="center"
-        color="gray.200"
-        bg="gray.800"
-        position="relative"
-        borderRadius="full"
-      >
-        <Input
-          variant="unstyled"
-          color="gray.50"
-          placeholder="search"
-          px="4"
-          mr="4"
-          _placeholder={{ color: "gray.400" }}
-        />
-        <Icon as={RiSearchLine} fontSize="20" />
-      </Flex>
+      <SearchBox />
 
       <Flex align="center" ml="auto">
-        <HStack
-          spacing="8"
-          mx="8"
-          pr="8"
-          py="1"
-          color="gray.300"
-          borderRightWidth={1}
-          borderColor="gray.700"
-        >
-          <Icon as={RiNotificationLine} />
-          <Icon as={RiUserAddLine} />
-        </HStack>
-        <Flex align="center">
-          <Box mr="4" textAlign="right">
-            <Text>Fabricio Policarpo</Text>
-            <Text color="gray.300">fabriciopolicarpo@gmail.com</Text>
-          </Box>
-          <Avatar size="md" name="Fabricio Policarpo" />
-        </Flex>
+        <Notifications />
+        <Profile />
       </Flex>
     </Flex>
   );
