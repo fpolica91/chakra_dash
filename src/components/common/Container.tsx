@@ -2,7 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import { ReactElement } from "toasted-notes/node_modules/@types/react";
 
 interface ContainerProps {
-  children: ReactElement;
+  children: ReactElement[];
 }
 
 export function Container({ children }: ContainerProps) {
