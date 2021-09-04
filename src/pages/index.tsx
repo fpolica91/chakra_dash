@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Input } from "../components/Form/Input";
-import { Flex, Button, Stack, FormLabel, FormControl } from "@chakra-ui/react";
+import { Flex, Button, Stack } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   return (
