@@ -7,18 +7,17 @@ import {
   Table,
   Tr,
   Th,
-  Text,
   Checkbox,
   Thead,
   Tbody,
-  Td,
 } from "@chakra-ui/react";
-import { RiAddLine, RiPencilLine } from "react-icons/ri";
+import { RiAddLine } from "react-icons/ri";
 
 import { Container as DefaultContainer } from "../../components/common/Container";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import Sidebar from "../../components/Sidebar";
+import { Row } from "../../components/Table/Row";
 
 export default function UserList() {
   return (
@@ -55,31 +54,16 @@ export default function UserList() {
             </Thead>
 
             <Tbody>
-              <Tr>
-                <Td px="6">
-                  <Checkbox colorScheme="pink" />
-                </Td>
-                <Td>
-                  <Box>
-                    <Text fontWeight="bold">Fabricio Policarpo</Text>
-                    <Text fontSize="sm" color="gray.300">
-                      fabriciopolicarpo0@gmail.com
-                    </Text>
-                  </Box>
-                </Td>
-                <Td>June 25, 2021</Td>
-                <Td>
-                  <Button
-                    as="a"
-                    size="sm"
-                    fontSize="sm"
-                    colorScheme="pink"
-                    leftIcon={<Icon as={RiPencilLine} />}
-                  >
-                    Edit
-                  </Button>
-                </Td>
-              </Tr>
+              <Row
+                name="Fabricio Policarpo"
+                email="fabriciopolicarpo0@gmail.com"
+                date="June 25, 2021"
+              />
+              <Row
+                name="Chloe Policarpo"
+                email="chloe@gmail.com"
+                date="June 25, 2021"
+              />
             </Tbody>
           </Table>
           <Pagination />
