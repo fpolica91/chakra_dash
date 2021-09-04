@@ -4,13 +4,14 @@ import { RiPencilLine } from "react-icons/ri";
 interface RowProps {
   name: string;
   email: string;
+  isDesktop?: boolean;
   date: string;
 }
 
-export function Row({ name, email, date }: RowProps) {
+export function Row({ name, email, date, isDesktop = true }: RowProps) {
   return (
     <Tr>
-      <Td px="6">
+      <Td px={["4", "4", "6"]}>
         <Checkbox colorScheme="pink" />
       </Td>
       <Td>
@@ -21,7 +22,8 @@ export function Row({ name, email, date }: RowProps) {
           </Text>
         </Box>
       </Td>
-      <Td>{date}</Td>
+      {isDesktop && <Td>{date}</Td>}
+
       <Td>
         <Button
           as="a"

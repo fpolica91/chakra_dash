@@ -10,6 +10,7 @@ import {
   Checkbox,
   Thead,
   Tbody,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine } from "react-icons/ri";
 
@@ -20,6 +21,10 @@ import Sidebar from "../../components/Sidebar";
 import { Row } from "../../components/Table/Row";
 
 export default function UserList() {
+  const isDesktop = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
   return (
     <Box>
       <Header />
@@ -44,22 +49,24 @@ export default function UserList() {
           <Table colorScheme="whiteAlpha">
             <Thead>
               <Tr>
-                <Th px="6" color="gray.300" w="8">
+                <Th px={["4", "4", "6"]} color="gray.300" w="8">
                   <Checkbox colorScheme="pink" />
                 </Th>
                 <Th>User</Th>
-                <Th>Data</Th>
-                <Th w="8"></Th>
+                {isDesktop && <Th>Data</Th>}
+                {isDesktop && <Th w="8"></Th>}
               </Tr>
             </Thead>
 
             <Tbody>
               <Row
+                isDesktop={isDesktop}
                 name="Fabricio Policarpo"
                 email="fabriciopolicarpo0@gmail.com"
                 date="June 25, 2021"
               />
               <Row
+                isDesktop={isDesktop}
                 name="Chloe Policarpo"
                 email="chloe@gmail.com"
                 date="June 25, 2021"

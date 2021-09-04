@@ -1,5 +1,4 @@
 import { Header } from "../components/Header/index";
-import IntrinsicAttributes from "react-apexcharts";
 import dynamic from "next/dynamic";
 import { Flex, SimpleGrid, Box, Text, theme } from "@chakra-ui/react";
 import Sidebar from "../components/Sidebar";
