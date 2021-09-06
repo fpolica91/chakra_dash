@@ -12,12 +12,20 @@ export function SidebarItem() {
   return (
     <Stack spacing="12" align="flex-start">
       <NavSection title="GENERAL">
-        <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
-        <NavLink icon={RiContactsLine}>Users</NavLink>
+        <NavLink href="/dashboard" icon={RiDashboardLine}>
+          Dashboard
+        </NavLink>
+        <NavLink href="/users" icon={RiContactsLine}>
+          Users
+        </NavLink>
       </NavSection>
       <NavSection title="AUTOMATING">
-        <NavLink icon={RiInputMethodLine}>Records</NavLink>
-        <NavLink icon={RiGitMergeLine}>Records</NavLink>
+        <NavLink href="/records" icon={RiInputMethodLine}>
+          Records
+        </NavLink>
+        <NavLink href="/automation" icon={RiGitMergeLine}>
+          Records
+        </NavLink>
       </NavSection>
     </Stack>
   );

@@ -23,18 +23,19 @@ export function Row({ name, email, date, isDesktop = true }: RowProps) {
         </Box>
       </Td>
       {isDesktop && <Td>{date}</Td>}
-
-      <Td>
-        <Button
-          as="a"
-          size="sm"
-          fontSize="sm"
-          colorScheme="pink"
-          leftIcon={<Icon as={RiPencilLine} />}
-        >
-          Edit
-        </Button>
-      </Td>
+      {isDesktop && (
+        <Td>
+          <Button
+            as="a"
+            size="sm"
+            fontSize="sm"
+            colorScheme="pink"
+            leftIcon={<Icon as={RiPencilLine} />}
+          >
+            Edit
+          </Button>
+        </Td>
+      )}
     </Tr>
   );
 }

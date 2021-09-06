@@ -13,6 +13,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine } from "react-icons/ri";
+import Link from "next/link";
 
 import { Container as DefaultContainer } from "../../components/common/Container";
 import { Header } from "../../components/Header";
@@ -35,15 +36,17 @@ export default function UserList() {
             <Heading size="lg" fontWeight="nomal">
               Users
             </Heading>
-            <Button
-              as="a"
-              size="sm"
-              fontSize="sm"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} />}
-            >
-              Register
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize="sm"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} />}
+              >
+                Register
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
