@@ -1,7 +1,6 @@
 import { useDisclosure, UseDisclosureReturn } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { createContext, useEffect, useContext, ReactNode } from "react";
-// import { ReactNode,  } from "toasted-notes/node_modules/@types/react";
 
 interface SidebarDrawerProviderProps {
   children: ReactNode;
