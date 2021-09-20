@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useRouter } from "next/router";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -19,12 +20,12 @@ const Home: NextPage = () => {
   const { register, handleSubmit, formState } = useForm<SignInFormData>({
     resolver: yupResolver(schema) as any,
   });
-
+  const router = useRouter();
   const { errors } = formState;
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
+    router.push("/dashboard");
   };
 
   return (
